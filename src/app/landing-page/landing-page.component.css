@@ -5,3 +5,8 @@
 .sans-serif {
     font-family: sans-serif
 }
+
+button {
+    display:block; 
+    margin: 20px 0
+}

@@ -1,20 +1,22 @@
 
-<div *ngIf="!loggedIn">
+<div *ngIf="!afAuth.auth.currentUser">
     <h1 class="monospace">Une ng-app :</h1>
-    <mat-form-field>
-      <input matInput placeholder="Nom" [(ngModel)]="model">
-    </mat-form-field>
-<button style="display:block" mat-raised-button color="primary" (click)="loggedIn=true">Sign-in</button>
+    <p class="sans-serif">Google-Firebase authentification :</p>
+<button style="display:block" mat-raised-button color="primary" (click)="signIn()">Sign-in</button>
 </div>
 
-<div *ngIf="loggedIn">
-   <h1 class="monospace">Bienvenue {{model}}</h1>
+<div *ngIf="afAuth.auth.currentUser">
+   <h1 class="monospace">Bienvenue {{afAuth.auth.currentUser.displayName}}</h1>
    <mat-divider></mat-divider>
    <div style="margin: 20px 0">
     <p class="sans-serif">Chuck Norris fact : {{chuckFact}}</p>
     <button mat-raised-button color="primary" (click)="getChuckFact()">Change fact</button>
    </div>
-   <mat-divider></mat-divider>
-   <button style="display:block; margin-top: 20px" mat-raised-button color="primary" (click)="loggedIn=false">Sign-out</button>
+   <button mat-raised-button color="primary" (click)="signOut()">Sign-out</button>
 </div>
+
+<mat-divider></mat-divider>
+<button mat-raised-button color="primary" (click)="showAfAuth()">Show user</button>
+
+
 
