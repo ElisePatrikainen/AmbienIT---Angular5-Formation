@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { MaterialModuleModule } from './material-module/material-module.module'
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -17,7 +18,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
   imports: [
     BrowserModule, 
     MaterialModuleModule, 
-    FormsModule
+    FormsModule, 
+    HttpClientModule
   ],
   providers: [
   ],
