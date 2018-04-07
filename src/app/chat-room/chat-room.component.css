@@ -1,0 +1,28 @@
+label {
+
+}
+
+.messageCont {
+    display: flex; 
+    margin: 5px 0; 
+}
+
+.messageCont img {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+}
+
+.messageDetail {
+    padding: 5px;
+}
+
+.messageUser {
+    font-size: 10px;
+    margin-bottom: 5px;
+    display: block;
+    color: gray;
+    font-family: monospace;
+    font-weight: bold;
+}
+

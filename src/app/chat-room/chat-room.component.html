@@ -1,0 +1,17 @@
+<div>
+  <span class="header">Ng-chat:</span>
+  <div class="messageCont" *ngFor="let chat of chats | async">
+    <img [src]="chat.photo">
+    <div class="messageDetail">
+      <span class="messageUser">{{chat.user}}</span>
+      <p class="messageContent">{{chat.message}}</p>
+    </div>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Your thoughts..." [(ngModel)]="chatMessage">
+    </mat-form-field>
+    <button mat-raised-button (click)="sendMessage()" class="customButton" style="display: inline">fake mes</button>
+  </div>
+
+</div>

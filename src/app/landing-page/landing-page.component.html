@@ -2,21 +2,32 @@
 <div *ngIf="!afAuth.auth.currentUser">
     <h1 class="monospace">Une ng-app :</h1>
     <p class="sans-serif">Google-Firebase authentification :</p>
-<button style="display:block" mat-raised-button color="primary" (click)="signIn()">Sign-in</button>
+<button style="display:block" mat-raised-button color="primary" (click)="signIn()" class="customButton">Sign-in</button>
 </div>
 
 <div *ngIf="afAuth.auth.currentUser">
-   <h1 class="monospace">Bienvenue {{afAuth.auth.currentUser.displayName}}</h1>
-   <mat-divider></mat-divider>
-   <div style="margin: 20px 0">
-    <p class="sans-serif">Chuck Norris fact : {{chuckFact}}</p>
-    <button mat-raised-button color="primary" (click)="getChuckFact()">Change fact</button>
+  <mat-card class="card">
+   <div class="topHeader">
+    <img [src]="afAuth.auth.currentUser.photoURL">
+    <h1 class="monospace">Bienvenue {{afAuth.auth.currentUser.displayName}}</h1>
    </div>
-   <button mat-raised-button color="primary" (click)="signOut()">Sign-out</button>
+   <mat-divider></mat-divider>
+   <div class="paragraph" style="margin: 20px 0">
+    <p class="chuckFact"><span class="header">Chuck Norris fact : </span>{{chuckFact}}</p>
+    <button mat-raised-button (click)="getChuckFact()" matTooltip="Get a better fact!" matTooltipPosition="right" class="customButton">
+        New fact
+    </button>
+   </div>
+   <mat-divider></mat-divider>
+   <div class="paragraph">
+    <app-chat-room></app-chat-room>
+   </div>
+   </mat-card>
 </div>
 
 <mat-divider></mat-divider>
-<button mat-raised-button color="primary" (click)="showAfAuth()">Show user</button>
+
+<button mat-raised-button (click)="signOut()" class="customButton">Sign-out</button>
 
 
 

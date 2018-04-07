@@ -8,15 +8,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2'; 
 import { environment } from './../environments/environment'; 
 import { AngularFireAuthModule } from 'angularfire2/auth'; 
+import { AngularFirestoreModule } from 'angularfire2/firestore'; 
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    ChatRoomComponent
   ],
   imports: [
     BrowserModule, 
@@ -24,7 +27,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     FormsModule, 
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase), 
-    AngularFireAuthModule
+    AngularFireAuthModule, 
+    AngularFirestoreModule
   ],
   providers: [
   ],

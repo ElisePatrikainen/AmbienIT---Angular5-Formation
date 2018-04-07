@@ -1,2 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.paragraph {
+    margin: 20px 0
+}
+
+.paragraph .header {
+    display: block;
+    font-style: normal;
+    margin-bottom: 10px;
+    color: gray;
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.mat-raised-button.customButton {
+    display:block; 
+    margin: 20px 0; 
+    background-color: #47417d75;
+    color: white;
+    font-family: monospace;
+    font-weight: bold;
+} 

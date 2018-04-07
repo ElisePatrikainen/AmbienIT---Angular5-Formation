@@ -6,7 +6,31 @@
     font-family: sans-serif
 }
 
-button {
-    display:block; 
-    margin: 20px 0
+.chuckFact {
+    font-style: italic;
+}
+
+.chuckFact span {
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+.card {
+    max-width: 600px;
+  }
+
+.card .topHeader {
+    display: flex; 
+    align-items: center;
+  }
+  
+.card img {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50% 50%; 
+    margin: 10px 30px 10px 0; 
+  }
+
+mat-divider {
+    position: relative !important; 
 }
