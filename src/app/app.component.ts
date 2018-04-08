@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  model: string;
+  testHook: boolean = false
+
+  evBinding1(event) {
+    window.alert("l'événement suivant s'est produit : " + event.type)
+    console.log(event)
+  }
+
 }
