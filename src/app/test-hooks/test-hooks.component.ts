@@ -7,7 +7,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class TestHooksComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor() {
+    console.log('constructor charged')
+   }
 
   ngOnInit() {
     console.log('ngOnInit called')

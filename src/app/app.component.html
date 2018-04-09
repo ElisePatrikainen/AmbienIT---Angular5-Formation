@@ -1,27 +1,66 @@
-<h1>Two-way data-binding</h1>
-<p>// [(ngModel)] directive</p>
+<h1>Composants :</h1>
+
+<h3>Inclusion d'un nouveau composant :</h3>
+<div class="newContainer maxWidth">
+  Un composant inclu : 
+  <app-new></app-new>
+</div>
+
+<h3>Transclusion</h3>
+<p class="subTitle">// ng-content tag</p>
+<app-transclusion>
+  Wow - du contenu intégré dynamiquement !
+</app-transclusion>  
+
+
+<h3>Console.log du lifecycle :</h3>
+<p class="subTitle">// ng-content tag</p>
+<app-test-hooks></app-test-hooks>  
+
+<p>------------</p>
+
+<h3>One-way: interpolation</h3>
+<p class="subTitle">// 	&#123;	&#123; ... &#125; &#125;</p>
+<div>{{ interpolation }}</div>
+
+<h3>One-way: property binding</h3>
+<p class="subTitle">// [ ... ]</p>
+<div [style.border]="bindedStyle" class="maxWidth">Je suis stylisé par property binding -- attention au piège 💣</div>
+<p class="subTitle small">Nb : nous verrons un moyen plus efficace de binder des propriétés de style avec les directives.</p>
+
+<h3>One-way: event-binding</h3>
+<p class="subTitle">// ( ... )</p>
+<button (click)="evBinding1($event)">Test event binding</button>
+
+<h3>Two-ways data-binding</h3>
+<p class="subTitle">// [(ngModel)] directive</p>
 <div>
   <input [(ngModel)]="model">
   <p>Notre data-binding : {{model}}</p>
 </div>
 
+<h3>Two-ways data-binding (2)</h3>
+<p class="subTitle">// à trouver </p>
+<input [(ngModel)]="styleModel">
+<div [style.backgroundColor]="styleModel" class="maxWidth">
+  Tapez la couleur de mon background </div>
+
+
 <p>------------</p>
 
-<h1>Transclusion</h1>
-<p>// ng-content tag</p>
-<app-transclusion>
-  Wow - du contenu intégré dynamiquement !
-</app-transclusion>  
 
-<p>------------</p>
 
-<h1>Event binding</h1>
-<h3>Simple event-binding</h3>
-<p>// (click) directive</p>
-<button (click)="evBinding1($event)">Test event binding</button>
 
 <h3>Event-binding & test lifecycle hooks</h3>
-<p>// (click) directive, ngIf directive et ngOnInit(), ngOnDestroy hooks</p>
+<p class="subTitle">// (click) directive, ngIf directive et ngOnInit(), ngOnDestroy hooks</p>
 <button (click)="testHook = !testHook">Console hooks</button>
 <app-test-hooks *ngIf="testHook"></app-test-hooks>
 
+<h3>To-do list \^^/</h3>
+<p class="subTitle">// à trouver </p>
+<ul>
+  <li *ngFor="let el of elArray">{{el}}</li>
+</ul>
+<p>Ajoutez un élément à la liste</p>
+<input [(ngModel)]="toAdd">
+<button (click)="addToList()">Ajouter</button>

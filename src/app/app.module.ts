@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 import { TransclusionComponent } from './transclusion/transclusion.component';
 import { TestHooksComponent } from './test-hooks/test-hooks.component';
+import { NestedComponent } from './nested/nested.component';
+import { NewComponent } from './new/new.component';
+import { LifecyleComponent } from './lifecyle/lifecyle.component';
 
 
 @NgModule({
@@ -14,7 +17,10 @@ import { TestHooksComponent } from './test-hooks/test-hooks.component';
     AppComponent,
     ChildComponent,
     TransclusionComponent,
-    TestHooksComponent
+    TestHooksComponent,
+    NestedComponent,
+    NewComponent,
+    LifecyleComponent
   ],
   imports: [
     BrowserModule, 

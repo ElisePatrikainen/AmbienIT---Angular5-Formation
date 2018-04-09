@@ -1,0 +1,5 @@
+p {
+    padding: 10px; 
+    border: 2px dotted rgb(78, 78, 78); 
+    max-width: 600px;
+}

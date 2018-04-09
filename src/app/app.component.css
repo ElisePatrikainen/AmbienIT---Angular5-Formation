@@ -1,0 +1,17 @@
+.newContainer {
+    padding: 10px; 
+    border: 2px solid gray; 
+}
+
+.maxWidth {
+    max-width: 620px;
+}
+
+.subTitle {
+    font-weight: bold;
+    color: gray;
+}
+
+.small {
+    font-size: 13px; 
+}
