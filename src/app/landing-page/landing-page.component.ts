@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFireAuth } from 'angularfire2/auth'; 
 import * as firebase from 'firebase/app';
 
+export interface ChuckResponse { value : string }
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -22,7 +24,8 @@ export class LandingPageComponent implements OnInit {
   }
 
   getChuckFact() {
-      this.http.get('https://api.chucknorris.io/jokes/random').subscribe(
+    
+    return this.http.get<ChuckResponse>('https://api.chucknorris.io/jokes/random').subscribe(
         data => 
           this.chuckFact = data.value
       )
