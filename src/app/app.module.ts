@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ApiService } from './api-service'
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     HttpClientModule
   ],
   providers: [
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

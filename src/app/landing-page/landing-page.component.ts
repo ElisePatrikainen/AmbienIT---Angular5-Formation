@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { ApiService } from './../api-service'; 
+
 
 @Component({
   selector: 'app-landing-page',
@@ -11,18 +12,17 @@ export class LandingPageComponent implements OnInit {
   model: string
   loggedIn: boolean = false
   chuckFact: string
-  constructor( private http: HttpClient ) {
-    this.getChuckFact()
+  constructor( public apiService : ApiService ) {
    }
 
   ngOnInit() {
+    this.getFactFromService()
   }
 
-  getChuckFact() {
-      this.http.get('https://api.chucknorris.io/jokes/random').subscribe(
-        data => 
-          this.chuckFact = data.value
-      )
+  getFactFromService() {
+    this.apiService.getChuckFact().subscribe(
+      data => this.chuckFact = data.value
+    )
   }
 
 }
